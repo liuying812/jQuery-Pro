@@ -1,0 +1,20 @@
+1.ÏÖ½ð  ¼õÇ®
+2.¿¨È¯  ÇëÑ¡Ôñ
+3.ÔùÆ·  ÇëÑ¡Ôñ
+
+
+input[type=checkbox]:checked
+input[type=checkbox]:not(:checked)
+
+.closest()
+.prop()   
+.attr()
+.is()
+.join()
+.prev()
+.children()
+.last()
+.after()
+$("input:text").val()
+
+ids.indexOf(checkId) >= 0

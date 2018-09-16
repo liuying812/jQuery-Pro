@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery练习一</title>
+	<link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<div class="container">
+		<table class="table table-bordered" id="proTable">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>名称</th>
+					<th>编码</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>运动鞋</td>
+					<td>6655321</td>
+					<td>
+						<div class="inline select-div-box">
+							<select name="doSome" id="" class="inline select-plan">
+								<option value="">请选择</option>
+								<option value="1">减免现金</option>
+								<option value="2">选择卡券</option>
+								<option value="3">选择赠品</option>
+							</select>
+							<div class="inline plan-box xj-set-box" style="display:none">
+								<input type="text" id="cash" class="inline" type="number" maxlength="5" placeholder="5位以内整数">
+								<label>元</label>
+							</div>
+
+							<div class="inline plan-box selected-coupon-box" style="display:none;"></div>
+							<div class="inline plan-box coupon-set-box" style="display:none">
+								<span>已选<span  class="selectCouponNum">0</span>张卡券</span>
+								<button class="btn btn-primary add-coupon">请选择卡券</button>
+							</div>   <!--  data-toggle="modal"   data-target="#couponModal" -->
+
+							<div class="inline plan-box selected-gift-box" style="display:none;"></div>
+							<div class="inline plan-box gift-set-box" style="display:none">
+								<span>已选<span class="selectGiftNum">0</span>件赠品</span>
+								<button class="btn btn-primary add-gift">请选择赠品</button>							
+							</div>  <!-- data-toggle="modal" data-target="#giftModal" -->
+						</div>			
+					</td>
+				</tr>	
+			</tbody>
+					
+		</table>
+		<a href="javascript:;" id="addNew">新增一行</a>
+		<button class="btn btn-primary" id="saveData">保存</button>
+	</div>
+
+	<!-- 卡券 模态框（Modal） -->
+	<div class="modal fade" id="couponModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">
+						选择卡券
+					</h4>
+				</div>
+				<div class="modal-body">
+					<table class="table table-bordered" id="couponListTable">
+						<thead>
+							<tr>
+								<th><input type="checkbox" id="addAllCoupon"></th>
+								<th>名称</th>
+								<th>编码</th>
+							</tr>
+						</thead>
+						<tbody id="couponList">
+							<tr>
+								<td><input type="checkbox" class="add-coupon-check" value="1" data-name="85度C-20元"></td>
+								<td>85度C-20元</td>
+								<td>123321</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" class="add-coupon-check" value="2" data-name="星巴克-15元"></td>
+								<td>星巴克-15元</td>
+								<td>234432</td>
+							</tr>
+						</tbody>						
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="confirmCoupon">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>	
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 赠品 模态框（Modal） -->
+	<div class="modal fade" id="giftModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">
+						选择赠品
+					</h4>
+				</div>
+				<div class="modal-body">
+					<table class="table table-bordered" id="giftListTable">
+						<thead>
+							<tr>
+								<th><input type="checkbox" id="addAllGift"></th>
+								<th>名称</th>
+								<th>编码</th>
+							</tr>
+						</thead>
+						<tbody id="giftList">
+							<tr>
+								<td><input type="checkbox" class="add-gift-check" value="1" data-name="防晒霜"></td>
+								<td>防晒霜</td>
+								<td>11111</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" class="add-gift-check" value="2" data-name="口红"></td>
+								<td>口红</td>
+								<td>22222</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="confirmGift">确定</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="./js/main.js"></script>
+</body>
+</html>
